@@ -37,7 +37,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const res = await fetch('https://dummyjson.com/products');
     const data = await res.json();
 
-    const paths = data.products.map((product: any) => ({
+    const paths = data.products.map((product: Product) => ({
         params: { id: product.id.toString() },
     }));
 

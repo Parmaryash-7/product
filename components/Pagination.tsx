@@ -1,7 +1,21 @@
 
 import styles from '@/styles/Pagination.module.css';
 
-export default function Pagination({ currentPage, totalPages, onPageChange }: any) {
+// type Product = {
+//     currentPage: number,
+//     totalPages: number,
+//     onPageChange
+// };
+
+type Pagination = {
+    currentPage: number;
+    onPageChange: (value: number) => void;
+    totalPages: number
+};
+
+
+
+export default function Pagination({ currentPage, totalPages, onPageChange }: Pagination) {
     return (
         <div className={styles.pagination}>
             {Array.from({ length: totalPages }).map((_, i) => (

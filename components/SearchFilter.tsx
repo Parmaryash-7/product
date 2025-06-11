@@ -1,7 +1,12 @@
 
 import styles from '@/styles/SearchFilter.module.css';
 
-export default function SearchFilter({ query, setQuery }: any) {
+type SearchFilterProps = {
+  query: string;
+  setQuery: (value: string) => void;
+};
+
+export default function SearchFilter({ query, setQuery }: SearchFilterProps) {
   return (
     <input
       className={styles.input}

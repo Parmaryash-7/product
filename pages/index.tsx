@@ -1,8 +1,22 @@
 
 import { GetStaticProps } from "next";
-import HomePage from "@/pages/components/HomePage";
+import HomePage from "@/components/HomePage";
 
-export default function Home({ products }: any) {
+type Product = {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  thumbnail: string;
+  images: string[];
+};
+
+type Products = {
+  products: Product[]
+}
+
+
+export default function Home({ products }: Products) {
   return <HomePage products={products} />;
 }
 
